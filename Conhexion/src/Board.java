@@ -8,6 +8,7 @@ public class Board
 	
 	private int rows;
 	private int columns;
+	private int[][] remember;
 
 	// Constructs a new board with the specified number of rows and columns
 	public Board(int rows, int columns)
@@ -15,6 +16,7 @@ public class Board
 		//throw new UnsupportedOperationException();
 		this.rows=rows;
 		this.columns=columns;
+		this.remember= new int[this.rows][this.columns];
 	}
 
 	// Constructs a new Board that clones the state of the specified Board
@@ -42,7 +44,8 @@ public class Board
 	// location on the board
 	public int getPlayer(Location location)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return this.remember[location.getRow()][location.getColumn()];
 	}
 
 	// Places a game piece from the specified player (represented by
@@ -50,7 +53,8 @@ public class Board
 	// specified location on the board
 	public void setPlayer(Location location, int player)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		this.remember[location.getRow()][location.getColumn()]=player;
 	}
 
 	// Although the GameManager does not need to call this method, the
