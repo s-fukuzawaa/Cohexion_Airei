@@ -5,11 +5,16 @@ public class Board
 	public static final int PLAYER_NONE = 0;
 	public static final int PLAYER_1 = 1;
 	public static final int PLAYER_2 = 2;
+	
+	private int rows;
+	private int columns;
 
 	// Constructs a new board with the specified number of rows and columns
 	public Board(int rows, int columns)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		this.rows=rows;
+		this.columns=columns;
 	}
 
 	// Constructs a new Board that clones the state of the specified Board
@@ -21,13 +26,15 @@ public class Board
 	// Returns the total number of rows in this Board
 	public int getRows()
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return this.rows;
 	}
 
 	// Returns the total number of columns in this Board
 	public int getColumns()
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return this.columns;
 	}
 
 	// Returns one of the three "player" ints defined on this class
