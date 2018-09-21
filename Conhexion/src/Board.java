@@ -5,10 +5,15 @@ public class Board
 	public static final int PLAYER_NONE = 0;
 	public static final int PLAYER_1 = 1;
 	public static final int PLAYER_2 = 2;
-	
+		
 	private int rows;
 	private int columns;
+	//2 dimentional array that represents board
 	private int[][] remember;
+	//array that includes the 4 sites
+	private WeightedQuickUnionUFCloneable union;
+	private WeightedQuickUnionUFCloneable w;
+
 
 	// Constructs a new board with the specified number of rows and columns
 	public Board(int rows, int columns)
@@ -17,6 +22,9 @@ public class Board
 		this.rows=rows;
 		this.columns=columns;
 		this.remember= new int[this.rows][this.columns];
+		this.union= new WeightedQuickUnionUFCloneable(remember.length+4);
+		this.w= new WeightedQuickUnionUFCloneable(remember.length);
+		
 	}
 
 	// Constructs a new Board that clones the state of the specified Board
@@ -55,6 +63,42 @@ public class Board
 	{
 		//throw new UnsupportedOperationException();
 		this.remember[location.getRow()][location.getColumn()]=player;
+
+		Location first= new Location(location.getRow()+1,location.getColumn() );
+		Location second= new Location(location.getRow()-1,location.getColumn() );
+		Location third= new Location(location.getRow(),location.getColumn()+1 );
+		Location forth= new Location(location.getRow(),location.getColumn()-1 );
+		Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+		Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
+
+		int loc=Convert(location);
+		
+		if(getPlayer(first)==player)
+		{w.union(loc, Convert(first));}
+		else if(getPlayer(second)==player)
+		{w.union(loc, Convert(second));}
+		else if(getPlayer(third)==player)
+		{w.union(loc, Convert(third));}
+		else if(getPlayer(forth)==player)
+		{w.union(loc, Convert(forth));}
+		else if(getPlayer(fifth)==player)
+		{w.union(loc, Convert(fifth));}
+		else if(getPlayer(sixth)==player)
+		{w.union(loc, Convert(sixth));}
+		
+		if(location.getRow()==0 && location.getColumn()==0)
+		{
+			if(player==1)
+			{
+				this.union.union(loc,this.);
+			}
+		}
+	}
+	
+	private int Convert(Location location)
+	{
+		int loc= 1+getColumns()*location.getRow()+location.getColumn();
+		return loc;
 	}
 
 	// Although the GameManager does not need to call this method, the
