@@ -465,10 +465,18 @@ public class GameManager
 		int columns = in.readInt();
 		Board board = new Board(rows, columns);
 
-		GameManager gm = new GameManager(board);
+		board.setPlayer(new Location(2,3), 1);
+		board.setPlayer(new Location(2, 4), 1);
+		board.setPlayer(new Location(5, 6), 2);
+		
+		board.isConnected(new Location(2,3), new Location(2, 4));
+		board.isConnected(new Location(2, 4), new Location(5, 6));
+		
+		//GameManager gm = new GameManager(board);
+		
 		
 		// Read and apply any moves from the input file
-		gm.placeInitialPieces(in);
+		/*gm.placeInitialPieces(in);
 		in.close();
 
 		System.out.println("Finished reading input file");
@@ -478,5 +486,6 @@ public class GameManager
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
 				);
+				*/
 	}		
 }

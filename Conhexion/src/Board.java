@@ -11,8 +11,9 @@ public class Board
 	//2 dimentional array that represents board
 	private int[][] remember;
 	//array that includes the 4 sites
-	private WeightedQuickUnionUFCloneable union;
 	private WeightedQuickUnionUFCloneable w;
+	private int[] unite;
+	private WeightedQuickUnionUFCloneable united;
 
 
 	// Constructs a new board with the specified number of rows and columns
@@ -22,8 +23,13 @@ public class Board
 		this.rows=rows;
 		this.columns=columns;
 		this.remember= new int[this.rows][this.columns];
-		this.union= new WeightedQuickUnionUFCloneable(remember.length+4);
 		this.w= new WeightedQuickUnionUFCloneable(remember.length);
+		this.unite= new int[remember.length+4];
+		for(int i=0; i<remember.length; i++)
+		{
+			unite[i]=i+1;
+		}
+		this.united= new WeightedQuickUnionUFCloneable(unite.length);
 		
 	}
 
@@ -90,7 +96,44 @@ public class Board
 		{
 			if(player==1)
 			{
-				this.union.union(loc,this.);
+				united.union(loc,this.unite[unite.length-4]);
+			}
+			if(player==2)
+			{
+				united.union(loc,this.unite[unite.length-1]);
+			}
+		}
+		else if(location.getRow()==0 && location.getColumn()==getColumns()-1)
+		{
+			if(player==1)
+			{
+				united.union(loc,this.unite[unite.length-4]);
+			}
+			if(player==2)
+			{
+				united.union(loc,this.unite[unite.length-3]);
+			}
+		}
+		else if(location.getRow()==getRows()-1 && location.getColumn()==getColumns()-1)
+		{
+			if(player==1)
+			{
+				united.union(loc,this.unite[unite.length-3]);
+			}
+			if(player==2)
+			{
+				united.union(loc,this.unite[unite.length-2]);
+			}
+		}
+		else if(location.getRow()==getRows()-1 && location.getColumn()==0)
+		{
+			if(player==1)
+			{
+				united.union(loc,this.unite[unite.length-2]);
+			}
+			if(player==2)
+			{
+				united.union(loc,this.unite[unite.length-1]);
 			}
 		}
 	}
@@ -106,7 +149,8 @@ public class Board
 	// union-find data structure correctly
 	public boolean isConnected(Location location1, Location location2)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return this.w.connected(Convert(location1), Convert(location2));
 	}
 
 	// Returns whether the specified location on the board contains
