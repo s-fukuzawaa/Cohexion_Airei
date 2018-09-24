@@ -68,14 +68,50 @@ public class Board
 		//throw new UnsupportedOperationException();
 		this.remember[location.getRow()][location.getColumn()]=player;
 
+		int loc=Convert(location);
+		
+		if(location.getRow()==0)
+		{
+			if(location.getColumn()==0&&player==2)
+			{
+				w.union(loc,this.unite[unite.length-1]);
+			}
+			w.union(loc,this.unite[unite.length-4]);
+				
+		}
+		else if(location.getColumn()==getColumns()-1)
+		{
+			if(location.getRow()==0 && player==1)
+			{
+				w.union(loc,this.unite[unite.length-4]);
+			}
+			w.union(loc,this.unite[unite.length-3]);
+			
+		}
+		else if(location.getRow()==getRows()-1)
+		{
+			if(player==1 && location.getColumn()==getColumns()-1)
+			{
+				w.union(loc,this.unite[unite.length-3]);
+			}
+			w.union(loc,this.unite[unite.length-2]);
+			
+		}
+		else if(location.getColumn()==0)
+		{
+			if(location.getRow()==getRows()-1 && player==1)
+			{
+				w.union(loc,this.unite[unite.length-2]);
+			}
+			w.union(loc,this.unite[unite.length-1]);
+		}
+		
 		Location first= new Location(location.getRow()+1,location.getColumn() );
 		Location second= new Location(location.getRow()-1,location.getColumn() );
 		Location third= new Location(location.getRow(),location.getColumn()+1 );
 		Location forth= new Location(location.getRow(),location.getColumn()-1 );
 		Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
 		Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
-
-		int loc=Convert(location);
 		
 		if(getPlayer(first)==player)
 		{w.union(loc, Convert(first));}
@@ -90,50 +126,7 @@ public class Board
 		else if(getPlayer(sixth)==player)
 		{w.union(loc, Convert(sixth));}
 		
-		if(location.getRow()==0 && location.getColumn()==0)
-		{
-			if(player==1)
-			{
-				w.union(loc,this.unite[unite.length-4]);
-			}
-			if(player==2)
-			{
-				w.union(loc,this.unite[unite.length-1]);
-			}
-		}
-		else if(location.getRow()==0 && location.getColumn()==getColumns()-1)
-		{
-			if(player==1)
-			{
-				w.union(loc,this.unite[unite.length-4]);
-			}
-			if(player==2)
-			{
-				w.union(loc,this.unite[unite.length-3]);
-			}
-		}
-		else if(location.getRow()==getRows()-1 && location.getColumn()==getColumns()-1)
-		{
-			if(player==1)
-			{
-				w.union(loc,this.unite[unite.length-3]);
-			}
-			if(player==2)
-			{
-				w.union(loc,this.unite[unite.length-2]);
-			}
-		}
-		else if(location.getRow()==getRows()-1 && location.getColumn()==0)
-		{
-			if(player==1)
-			{
-				w.union(loc,this.unite[unite.length-2]);
-			}
-			if(player==2)
-			{
-				w.union(loc,this.unite[unite.length-1]);
-			}
-		}
+		
 	}
 	
 	private int Convert(Location location)
