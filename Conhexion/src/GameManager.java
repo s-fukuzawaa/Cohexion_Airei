@@ -467,11 +467,9 @@ public class GameManager
 
 		board.setPlayer(new Location(2,3), 1);
 		board.setPlayer(new Location(2, 4), 1);
-		board.setPlayer(new Location(5, 6), 2);
-		board.getPlayer(new Location(7,8));
+		board.getPlayer(new Location(2,3));
 		
 		board.isConnected(new Location(2,3), new Location(2, 4));
-		board.isConnected(new Location(2, 4), new Location(5, 6));
 		
 		//GameManager gm = new GameManager(board);
 		
