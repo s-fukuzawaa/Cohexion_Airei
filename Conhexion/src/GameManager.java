@@ -465,9 +465,15 @@ public class GameManager
 		int columns = in.readInt();
 		Board board = new Board(rows, columns);
 
-		board.setPlayer(new Location(rows-2,columns-3), 1);
-		board.setPlayer(new Location(rows-2, columns-1), 1);
-		board.getPlayer(new Location(rows-2,columns-2));
+		board.getPlayer(new Location(0,0));
+
+		board.setPlayer(new Location(0,0), 1);
+		board.setPlayer(new Location(0, 1), 1);
+		
+		board.getPlayer(new Location(0,0));
+		board.getPlayer(new Location(0,1));
+		
+		board.isConnected(new Location(0, 0), new Location(0,1));
 		
 		board.isConnected(new Location(rows-2,columns-1), new Location(rows-1, columns-1));
 		
