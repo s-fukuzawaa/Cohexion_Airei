@@ -218,7 +218,12 @@ public class Board
 	public boolean isConnected(Location location1, Location location2)
 	{
 		//throw new UnsupportedOperationException();
-		return w.connected(Convert(location1), Convert(location2));
+		//return w.connected(Convert(location1), Convert(location2));
+		if(this.remember[location1.getRow()][location1.getColumn()]==this.remember[location2.getRow()][location2.getColumn()])
+		{
+			return true;
+		}
+		return false;
 	}
 
 	// Returns whether the specified location on the board contains
