@@ -24,7 +24,7 @@ public class Board
 		this.remember= new int[this.rows][this.columns];
 		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
 		this.unite= new int[this.columns*this.rows+4];
-		for(int i=0; i<this.columns*this.rows; i++)
+		for(int i=0; i<unite.length; i++)
 		{
 			unite[i]=i;
 		}
