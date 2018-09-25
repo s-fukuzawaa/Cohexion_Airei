@@ -82,9 +82,12 @@ public class Board
 			{
 				w.union(loc,this.unite[unite.length-1]);
 			}
-			else
+			else if(location.getColumn()==0&&player==1)
 			{
 				w.union(loc,this.unite[unite.length-4]);
+			}
+			else
+			{
 				Location forth= new Location(location.getRow(),location.getColumn()-1 );
 				Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
 				
@@ -92,6 +95,8 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(sixth)==player)
 				{w.union(loc, Convert(sixth));}
+				w.union(loc,this.unite[unite.length-4]);
+
 			}
 			
 
