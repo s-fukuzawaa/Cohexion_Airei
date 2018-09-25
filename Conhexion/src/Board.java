@@ -117,6 +117,10 @@ public class Board
 			{
 				w.union(loc,this.unite[unite.length-4]);
 			}
+			if(location.getRow()==0 && player==2)
+			{
+				w.union(loc,this.unite[unite.length-3]);
+			}
 			else
 			{
 				Location second= new Location(location.getRow()-1,location.getColumn() );
@@ -141,7 +145,10 @@ public class Board
 			{
 				w.union(loc,this.unite[unite.length-3]);
 			}
-			
+			if(player==2 && location.getColumn()==getColumns()-1)
+			{
+				w.union(loc,this.unite[unite.length-2]);
+			}
 			else
 			{
 				
@@ -173,6 +180,10 @@ public class Board
 			if(location.getRow()==getRows()-1 && player==1)
 			{
 				w.union(loc,this.unite[unite.length-2]);
+			}
+			if(location.getRow()==getRows()-1 && player==2)
+			{
+				w.union(loc,this.unite[unite.length-1]);
 			}
 			else
 			{
