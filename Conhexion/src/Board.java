@@ -24,7 +24,7 @@ public class Board
 		this.remember= new int[this.rows][this.columns];
 		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
 		this.unite= new int[this.columns*this.rows+4];
-		for(int i=0; i<unite.length; i++)
+		for(int i=0; i<this.columns*this.rows+4; i++)
 		{
 			unite[i]=i;
 		}
@@ -218,12 +218,7 @@ public class Board
 	public boolean isConnected(Location location1, Location location2)
 	{
 		//throw new UnsupportedOperationException();
-		//return w.connected(Convert(location1), Convert(location2));
-		if(this.remember[location1.getRow()][location1.getColumn()]==this.remember[location2.getRow()][location2.getColumn()])
-		{
-			return true;
-		}
-		return false;
+		return w.connected(Convert(location1), Convert(location2));
 	}
 
 	// Returns whether the specified location on the board contains
