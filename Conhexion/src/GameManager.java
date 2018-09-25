@@ -385,7 +385,7 @@ public class GameManager
 		int lineNumber = 2;
 
 		// repeatedly read in moves and draw resulting board
-		while (!in.isEmpty()) 
+		/*while (!in.isEmpty()) 
 		{
 			// Let the user step through the file by tapping enter
 			System.out.print("Press enter to apply line #" + lineNumber + "...");
@@ -398,7 +398,7 @@ public class GameManager
 			board.setPlayer(new Location(row, col), player);
 			drawBoard();
 			lineNumber++;
-		}
+		}*/
 
 		initialPiecesPlaced = true;
 		drawBoard();
@@ -458,7 +458,7 @@ public class GameManager
 	public static void main(String[] args)
 	{
 		// HEY YOU!  Modify this string to read in other input files
-		In in = new In("testInput/board-11x11-empty.txt");
+		In in = new In("testInput/board-3x4-1a.txt");
 
 		// Read in board size and create board
 		int rows = in.readInt();
@@ -477,11 +477,11 @@ public class GameManager
 		
 		board.isConnected(new Location(rows-2,columns-1), new Location(rows-1, columns-1));
 		
-		//GameManager gm = new GameManager(board);
+		GameManager gm = new GameManager(board);
 		
 		
 		// Read and apply any moves from the input file
-		/*gm.placeInitialPieces(in);
+		gm.placeInitialPieces(in);
 		in.close();
 
 		System.out.println("Finished reading input file");
@@ -491,6 +491,6 @@ public class GameManager
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
 				);
-				*/
+				
 	}		
 }
