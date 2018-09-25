@@ -12,7 +12,7 @@ public class Board
 	private int[][] board;
 	//array that includes the 4 sites
 	private WeightedQuickUnionUFCloneable w;
-	private int boardnum;
+	private int[] unite;
 
 
 	// Constructs a new board with the specified number of rows and columns
@@ -22,15 +22,12 @@ public class Board
 		this.rows=rows;
 		this.columns=columns;
 		this.board= new int[this.rows][this.columns];
-		for(int i=0; i<rows; i++)
-		{
-			for(int j=0; j<columns; j++)
-			{
-				board[i][j]=0;
-			}
-		}
 		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
-		this.boardnum=this.columns*this.rows+4;
+		this.unite= new int[this.columns*this.rows+4];
+		for(int i=0; i<this.columns*this.rows+4; i++)
+		{
+			unite[i]=i;
+		}
 		
 	}
 
@@ -83,7 +80,7 @@ public class Board
 			{w.union(loc, Convert(third));}
 			if(location.getColumn()==0&&player==2)
 			{
-				w.union(loc,boardnum-1);
+				w.union(loc,this.unite[unite.length-1]);
 			}
 			else
 			{
@@ -113,7 +110,7 @@ public class Board
 			{w.union(loc, Convert(sixth));}
 			if(location.getRow()==0 && player==1)
 			{
-				w.union(loc,boardnum-4);
+				w.union(loc,this.unite[unite.length-4]);
 			}
 			else
 			{
@@ -121,7 +118,7 @@ public class Board
 				
 				if(getPlayer(second)==player)
 				{w.union(loc, Convert(second));}
-				w.union(loc,boardnum-3);
+				w.union(loc,this.unite[unite.length-3]);
 			}
 			
 			
@@ -137,7 +134,7 @@ public class Board
 			{w.union(loc, Convert(forth));}
 			if(player==1 && location.getColumn()==getColumns()-1)
 			{
-				w.union(loc,boardnum-3);
+				w.union(loc,this.unite[unite.length-3]);
 			}
 			
 			else
@@ -151,7 +148,7 @@ public class Board
 				else if(getPlayer(third)==player)
 				{w.union(loc, Convert(third));}
 
-				w.union(loc,boardnum-2);
+				w.union(loc,this.unite[unite.length-2]);
 
 			}
 						
@@ -170,11 +167,11 @@ public class Board
 			
 			if(location.getRow()==getRows()-1 && player==1)
 			{
-				w.union(loc,boardnum-2);
+				w.union(loc,this.unite[unite.length-2]);
 			}
 			else
 			{
-				w.union(loc,boardnum-1);
+				w.union(loc,this.unite[unite.length-1]);
 				Location forth= new Location(location.getRow()+1,location.getColumn() );
 				if(getPlayer(forth)==player)
 				{w.union(loc, Convert(forth));}
