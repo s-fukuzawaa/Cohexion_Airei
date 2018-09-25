@@ -9,10 +9,10 @@ public class Board
 	private int rows;
 	private int columns;
 	//2 dimentional array that represents board
-	private int[][] remember;
+	private int[][] board;
 	//array that includes the 4 sites
 	private WeightedQuickUnionUFCloneable w;
-	private int[] unite;
+	private int boardnum;
 
 
 	// Constructs a new board with the specified number of rows and columns
@@ -21,13 +21,16 @@ public class Board
 		//throw new UnsupportedOperationException();
 		this.rows=rows;
 		this.columns=columns;
-		this.remember= new int[this.rows][this.columns];
-		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
-		this.unite= new int[this.columns*this.rows+4];
-		for(int i=0; i<this.columns*this.rows+4; i++)
+		this.board= new int[this.rows][this.columns];
+		for(int i=0; i<rows; i++)
 		{
-			unite[i]=i;
+			for(int j=0; j<columns; j++)
+			{
+				board[i][j]=0;
+			}
 		}
+		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
+		this.boardnum=this.columns*this.rows+4;
 		
 	}
 
@@ -57,7 +60,7 @@ public class Board
 	public int getPlayer(Location location)
 	{
 		//throw new UnsupportedOperationException();
-		return this.remember[location.getRow()][location.getColumn()];
+		return this.board[location.getRow()][location.getColumn()];
 	}
 
 	// Places a game piece from the specified player (represented by
@@ -66,7 +69,7 @@ public class Board
 	public void setPlayer(Location location, int player)
 	{
 		//throw new UnsupportedOperationException();
-		this.remember[location.getRow()][location.getColumn()]=player;
+		this.board[location.getRow()][location.getColumn()]=player;
 
 		int loc=Convert(location);
 		
@@ -80,7 +83,7 @@ public class Board
 			{w.union(loc, Convert(third));}
 			if(location.getColumn()==0&&player==2)
 			{
-				w.union(loc,this.unite[unite.length-1]);
+				w.union(loc,boardnum-1);
 			}
 			else
 			{
@@ -110,7 +113,7 @@ public class Board
 			{w.union(loc, Convert(sixth));}
 			if(location.getRow()==0 && player==1)
 			{
-				w.union(loc,this.unite[unite.length-4]);
+				w.union(loc,boardnum-4);
 			}
 			else
 			{
@@ -118,7 +121,7 @@ public class Board
 				
 				if(getPlayer(second)==player)
 				{w.union(loc, Convert(second));}
-				w.union(loc,this.unite[unite.length-3]);
+				w.union(loc,boardnum-3);
 			}
 			
 			
@@ -134,7 +137,7 @@ public class Board
 			{w.union(loc, Convert(forth));}
 			if(player==1 && location.getColumn()==getColumns()-1)
 			{
-				w.union(loc,this.unite[unite.length-3]);
+				w.union(loc,boardnum-3);
 			}
 			
 			else
@@ -148,7 +151,7 @@ public class Board
 				else if(getPlayer(third)==player)
 				{w.union(loc, Convert(third));}
 
-				w.union(loc,this.unite[unite.length-2]);
+				w.union(loc,boardnum-2);
 
 			}
 						
@@ -167,11 +170,11 @@ public class Board
 			
 			if(location.getRow()==getRows()-1 && player==1)
 			{
-				w.union(loc,this.unite[unite.length-2]);
+				w.union(loc,boardnum-2);
 			}
 			else
 			{
-				w.union(loc,this.unite[unite.length-1]);
+				w.union(loc,boardnum-1);
 				Location forth= new Location(location.getRow()+1,location.getColumn() );
 				if(getPlayer(forth)==player)
 				{w.union(loc, Convert(forth));}
