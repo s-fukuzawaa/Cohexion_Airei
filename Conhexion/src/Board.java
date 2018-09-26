@@ -128,7 +128,7 @@ public class Board
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
 			}
-			else
+			else if(location.getColumn()!=getColumns()-1&&location.getColumn()!=0)
 			{
 				Location forth= new Location(location.getRow(),location.getColumn()-1 );
 				Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
@@ -194,7 +194,7 @@ public class Board
 				else if(getPlayer(forth)==player)
 				{w.union(loc, Convert(forth));}
 			}
-			else
+			else if(location.getColumn()!=getColumns()-1&&location.getColumn()!=0)
 			{
 				Location second= new Location(location.getRow()-1,location.getColumn() );
 				Location third= new Location(location.getRow(),location.getColumn()+1 );
@@ -242,7 +242,7 @@ public class Board
 			{w.union(loc, Convert(fifth));}
 
 		}
-		else
+		else 
 		{
 			Location first= new Location(location.getRow()+1,location.getColumn() );
 			Location second= new Location(location.getRow()-1,location.getColumn() );

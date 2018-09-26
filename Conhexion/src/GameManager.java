@@ -458,7 +458,7 @@ public class GameManager
 	public static void main(String[] args)
 	{
 		// HEY YOU!  Modify this string to read in other input files
-		In in = new In("testInput/board-3x4-1a.txt");
+		In in = new In("testInput/board-4x3-8.txt");
 
 		// Read in board size and create board
 		int rows = in.readInt();
@@ -482,11 +482,11 @@ public class GameManager
 				);*/
 		board.getPlayer(new Location(0,0));
 
-		board.setPlayer(new Location(2,3), 1);
-		board.setPlayer(new Location(0, 1), 1);
+		//board.setPlayer(new Location(2,3), 1);
+		board.setPlayer(new Location(0, 0), 1);
 		
-		board.getPlayer(new Location(2,3));
-		board.getPlayer(new Location(0,1));
+		//board.getPlayer(new Location(2,3));
+		board.getPlayer(new Location(0,0));
 		
 		board.isConnected(new Location(0, 0), new Location(0,1));
 		
