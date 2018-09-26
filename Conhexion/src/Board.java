@@ -101,7 +101,7 @@ public class Board
 				{w.union(loc, Convert(third));}
 			
 			}
-			if(location.getColumn()==getColumns()-1&&player==1)
+			else if(location.getColumn()==getColumns()-1&&player==1)
 			{
 				w.union(loc,this.unite[unite.length-4]);
 				Location forth= new Location(location.getRow(),location.getColumn()-1 );
@@ -142,7 +142,7 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
-
+				w.union(loc, this.unite[unite.length-4]);
 			}
 		}
 		else if(location.getRow()==getRows()-1)
@@ -174,7 +174,7 @@ public class Board
 				{w.union(loc, Convert(fifth));}
 
 			}
-			if(location.getColumn()==getColumns()-1&&player==1)
+			else if(location.getColumn()==getColumns()-1&&player==1)
 			{
 				w.union(loc,this.unite[unite.length-2]);
 				Location second= new Location(location.getRow()-1,location.getColumn() );
@@ -208,7 +208,7 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
-
+				w.union(loc,this.unite[unite.length-2]);
 			}
 		}
 		else if(location.getColumn()==getColumns()-1)
