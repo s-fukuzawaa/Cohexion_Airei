@@ -484,7 +484,7 @@ public class GameManager
 
 		//board.setPlayer(new Location(2,3), 1);
 		board.setPlayer(new Location(0, 0), 1);
-		
+		board.setPlayer(new Location(0,1),2);
 		//board.getPlayer(new Location(2,3));
 		board.getPlayer(new Location(0,0));
 		
