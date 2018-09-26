@@ -371,7 +371,7 @@ public class GameManager
 		return FILL_COLORS[board.getPlayer(new Location(row, column))];
 	}
 
-	/*public void placeInitialPieces(In in)
+	public void placeInitialPieces(In in)
 	{
 		Scanner console = new Scanner(System.in);
 
@@ -385,7 +385,7 @@ public class GameManager
 		int lineNumber = 2;
 
 		// repeatedly read in moves and draw resulting board
-		/*while (!in.isEmpty()) 
+		while (!in.isEmpty()) 
 		{
 			// Let the user step through the file by tapping enter
 			System.out.print("Press enter to apply line #" + lineNumber + "...");
@@ -402,7 +402,7 @@ public class GameManager
 
 		initialPiecesPlaced = true;
 		drawBoard();
-	}*/
+	}
 
 	public void play(Player player1, Player player2)
 	{
@@ -465,18 +465,8 @@ public class GameManager
 		int columns = in.readInt();
 		Board board = new Board(rows, columns);
 
-		board.getPlayer(new Location(0,0));
-
-		board.setPlayer(new Location(0,0), 1);
-		board.setPlayer(new Location(0, 1), 1);
 		
-		board.getPlayer(new Location(0,0));
-		board.getPlayer(new Location(0,1));
-		
-		board.isConnected(new Location(0, 0), new Location(0,1));
-		//board.isConnected(new Location(rows-2,columns-1), new Location(rows-1, columns-1));
-		
-		GameManager gm = new GameManager(board);
+		/*GameManager gm = new GameManager(board);
 		
 		
 		// Read and apply any moves from the input file
@@ -489,7 +479,17 @@ public class GameManager
 		gm.play(
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
-				);
+				);*/
+		board.getPlayer(new Location(0,0));
+
+		board.setPlayer(new Location(0,0), 1);
+		board.setPlayer(new Location(0, 1), 1);
+		
+		board.getPlayer(new Location(0,0));
+		board.getPlayer(new Location(0,1));
+		
+		board.isConnected(new Location(0, 0), new Location(0,1));
+		
 				
 	}		
 }
