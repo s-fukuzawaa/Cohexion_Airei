@@ -371,7 +371,7 @@ public class GameManager
 		return FILL_COLORS[board.getPlayer(new Location(row, column))];
 	}
 
-	public void placeInitialPieces(In in)
+	/*public void placeInitialPieces(In in)
 	{
 		Scanner console = new Scanner(System.in);
 
@@ -398,11 +398,11 @@ public class GameManager
 			board.setPlayer(new Location(row, col), player);
 			drawBoard();
 			lineNumber++;
-		}*/
+		}
 
 		initialPiecesPlaced = true;
 		drawBoard();
-	}
+	}*/
 
 	public void play(Player player1, Player player2)
 	{
