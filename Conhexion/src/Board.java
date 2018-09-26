@@ -225,6 +225,7 @@ public class Board
 			{w.union(loc, Convert(forth));}
 			else if(getPlayer(sixth)==player)
 			{w.union(loc, Convert(sixth));}
+			w.union(loc,this.unite[unite.length-3]);
 		}
 		else if(location.getColumn()==0)
 		{
@@ -240,6 +241,7 @@ public class Board
 			{w.union(loc, Convert(third));}
 			else if(getPlayer(fifth)==player)
 			{w.union(loc, Convert(fifth));}
+			w.union(loc,this.unite[unite.length-1]);
 
 		}
 		else 
@@ -308,7 +310,7 @@ public class Board
 		
 		
 	}
-//
+
 	// Returns one of the three "player" ints indicating who is the winner
 	// of the current Board.  PLAYER_NONE indicates no one has won yet.
 	public int getCurrentWinner()
