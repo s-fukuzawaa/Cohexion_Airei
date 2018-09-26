@@ -208,7 +208,7 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
-				w.union(loc,this.unite[unite.length-2]);
+				w.union(loc,this.unite[unite.length-2]);//
 			}
 		}
 		else if(location.getColumn()==getColumns()-1)
