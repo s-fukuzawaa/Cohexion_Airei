@@ -287,13 +287,43 @@ public class Board
 	// player's sides.
 	public int getSideConnection(Location location)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		int player=this.board[location.getRow()][location.getColumn()];
+		int loc= Convert(location);
+		if(player==1)
+		{
+			if(w.connected(loc, this.unite[unite.length-2])||w.connected(loc, this.unite[unite.length-4]))
+			{
+				return 1;
+			}
+		}
+		if(player==2)
+		{
+			if(w.connected(loc, this.unite[unite.length-1])||w.connected(loc, this.unite[unite.length-3]))
+			{
+				return 2;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+		
 	}
 
 	// Returns one of the three "player" ints indicating who is the winner
 	// of the current Board.  PLAYER_NONE indicates no one has won yet.
 	public int getCurrentWinner()
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		if(w.find(this.unite.length-4)!=this.unite.length-4 && w.find(this.unite.length-2)!=this.unite.length-2)
+		{
+			return 1;
+		}
+		if(w.find(this.unite.length-1)!=this.unite.length-1 && w.find(this.unite.length-3)!=this.unite.length-3)
+		{
+			return 2;
+		}
+		return 0;
 	}
 }
