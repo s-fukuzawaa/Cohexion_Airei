@@ -483,10 +483,13 @@ public class GameManager
 		board.getPlayer(new Location(0,0));
 
 		//board.setPlayer(new Location(2,3), 1);
-		board.setPlayer(new Location(0, 6), 1);
+		board.setPlayer(new Location(4,10), 2);
+		board.setPlayer(new Location(5,9),2);
+		board.setPlayer(new Location(6, 8), 2);
 		//board.getPlayer(new Location(2,3));
-		board.getSideConnection(new Location(0,6));
-		board.getPlayer(new Location(0,6));
+	board.getSideConnection(new Location(6,8));
+		
+		board.getPlayer(new Location(6,8));
 		
 		board.isConnected(new Location(0, 0), new Location(0,1));
 		
