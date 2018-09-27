@@ -255,15 +255,15 @@ public class Board
 			
 			if(getPlayer(first)==player)
 			{w.union(loc, Convert(first));}
-			else if(getPlayer(second)==player)
+			if(getPlayer(second)==player)
 			{w.union(loc, Convert(second));}
-			else if(getPlayer(third)==player)
+			if(getPlayer(third)==player)
 			{w.union(loc, Convert(third));}
-			else if(getPlayer(forth)==player)
+			if(getPlayer(forth)==player)
 			{w.union(loc, Convert(forth));}
-			else if(getPlayer(fifth)==player)
+			if(getPlayer(fifth)==player)
 			{w.union(loc, Convert(fifth));}
-			else if(getPlayer(sixth)==player)
+			if(getPlayer(sixth)==player)
 			{w.union(loc, Convert(sixth));}
 		}
 		
@@ -281,6 +281,7 @@ public class Board
 	public boolean isConnected(Location location1, Location location2)
 	{
 		//throw new UnsupportedOperationException();
+		
 		return w.connected(Convert(location1), Convert(location2));
 	}
 
