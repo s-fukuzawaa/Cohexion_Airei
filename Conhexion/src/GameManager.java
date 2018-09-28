@@ -483,17 +483,16 @@ public class GameManager
 		board.getPlayer(new Location(0,0));
 
 		//board.setPlayer(new Location(2,3), 1);
-		board.setPlayer(new Location(1,1), 1);
-		board.setPlayer(new Location(2,1),1);		
-		board.setPlayer(new Location(3,1),1);
-		board.setPlayer(new Location(2,0), 1);
-		board.setPlayer(new Location(3, 3),1);
-		board.setPlayer(new Location(3, 2),1);
+		board.setPlayer(new Location(1,2), 2);
+		board.setPlayer(new Location(4,3),2);		
+		board.setPlayer(new Location(3,4),2);
+		board.setPlayer(new Location(2, 4),2);
+		board.setPlayer(new Location(4, 1),2);
 		
 		//board.getPlayer(new Location(6,8));
 		
-		board.isConnected(new Location(1, 1), new Location(3,2));
-		
+		board.isConnected(new Location(1, 2), new Location(4,1));
+
 				
 	}		
 }
