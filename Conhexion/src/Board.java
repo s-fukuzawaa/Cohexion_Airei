@@ -13,6 +13,7 @@ public class Board
 	//array that includes the 4 sites
 	private WeightedQuickUnionUFCloneable w;
 	private int[] unite;
+	private Board b;
 
 
 	// Constructs a new board with the specified number of rows and columns
@@ -41,7 +42,8 @@ public class Board
 	// Constructs a new Board that clones the state of the specified Board
 	public Board(Board original)
 	{
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		this.b= new Board(original);
 	}
 
 	// Returns the total number of rows in this Board
