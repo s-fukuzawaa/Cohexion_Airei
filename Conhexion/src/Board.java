@@ -170,6 +170,10 @@ public class Board
 						w.union(five, this.unite[unite.length-4]);
 					}
 				}
+				else
+				{
+					w.union(loc, this.unite[unite.length-4]);
+				}
 				
 			}
 		}
@@ -264,6 +268,10 @@ public class Board
 						w.union(five, this.unite[unite.length-2]);
 					}
 				}
+				else
+				{
+					w.union(loc, this.unite[unite.length-2]);
+				}
 			}
 		}
 		else if(location.getColumn()==getColumns()-1)
@@ -308,6 +316,10 @@ public class Board
 					w.union(six,this.unite[unite.length-3]);
 				}
 			}
+			else
+			{
+				w.union(loc, this.unite[unite.length-3]);
+			}
 			
 		}
 		else if(location.getColumn()==0)
@@ -351,6 +363,10 @@ public class Board
 				{
 					w.union(five,this.unite[unite.length-1]);
 				}
+			}
+			else
+			{
+				w.union(loc, this.unite[unite.length-1]);
 			}
 			
 		}
