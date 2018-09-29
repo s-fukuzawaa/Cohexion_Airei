@@ -142,7 +142,10 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
-				w.union(loc, this.unite[unite.length-4]);
+				if(player==1)
+				{
+					w.union(loc, this.unite[unite.length-4]);
+				}
 			}
 		}
 		else if(location.getRow()==getRows()-1)
@@ -208,7 +211,10 @@ public class Board
 				{w.union(loc, Convert(forth));}
 				else if(getPlayer(fifth)==player)
 				{w.union(loc, Convert(fifth));}
-				w.union(loc,this.unite[unite.length-2]);//
+				if(player==1)
+				{
+					w.union(loc,this.unite[unite.length-2]);//
+				}
 			}
 		}
 		else if(location.getColumn()==getColumns()-1)
@@ -225,7 +231,10 @@ public class Board
 			{w.union(loc, Convert(forth));}
 			else if(getPlayer(sixth)==player)
 			{w.union(loc, Convert(sixth));}
-			w.union(loc,this.unite[unite.length-3]);
+			if(player==2)
+			{
+				w.union(loc,this.unite[unite.length-3]);
+			}
 		}
 		else if(location.getColumn()==0)
 		{
@@ -241,8 +250,10 @@ public class Board
 			{w.union(loc, Convert(third));}
 			else if(getPlayer(fifth)==player)
 			{w.union(loc, Convert(fifth));}
-			w.union(loc,this.unite[unite.length-1]);
-
+			if(player==2)
+			{
+				w.union(loc,this.unite[unite.length-1]);
+			}
 		}
 		else 
 		{
