@@ -170,7 +170,7 @@ public class Board
 						w.union(five, this.unite[unite.length-4]);
 					}
 				}
-				else
+				else if(player==1)
 				{
 					w.union(loc, this.unite[unite.length-4]);
 				}
@@ -268,7 +268,7 @@ public class Board
 						w.union(five, this.unite[unite.length-2]);
 					}
 				}
-				else
+				else if(player==1)
 				{
 					w.union(loc, this.unite[unite.length-2]);
 				}
@@ -316,7 +316,7 @@ public class Board
 					w.union(six,this.unite[unite.length-3]);
 				}
 			}
-			else
+			else if(player==2)
 			{
 				w.union(loc, this.unite[unite.length-3]);
 			}
@@ -364,7 +364,7 @@ public class Board
 					w.union(five,this.unite[unite.length-1]);
 				}
 			}
-			else
+			else if(player==2)
 			{
 				w.union(loc, this.unite[unite.length-1]);
 			}
