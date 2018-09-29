@@ -265,17 +265,17 @@ public class Board
 			Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
 			
 			if(getPlayer(first)==player)
-			{w.union(loc, Convert(first));}
+			{w.union(Convert(first),loc);}
 			if(getPlayer(second)==player)
-			{w.union(loc, Convert(second));}
+			{w.union( Convert(second),loc);}
 			if(getPlayer(third)==player)
-			{w.union(loc, Convert(third));}
+			{w.union(Convert(third),loc);}
 			if(getPlayer(forth)==player)
-			{w.union(loc, Convert(forth));}
+			{w.union(Convert(forth),loc);}
 			if(getPlayer(fifth)==player)
-			{w.union(loc, Convert(fifth));}
+			{w.union(Convert(fifth),loc);}
 			if(getPlayer(sixth)==player)
-			{w.union(loc, Convert(sixth));}
+			{w.union(Convert(sixth),loc);}
 		}
 		
 	}
