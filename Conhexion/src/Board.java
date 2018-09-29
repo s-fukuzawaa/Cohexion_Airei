@@ -317,11 +317,11 @@ public class Board
 	public int getCurrentWinner()
 	{
 		//throw new UnsupportedOperationException();
-		if(w.connected(this.unite.length-4, this.unite.length-2))
+		if(w.connected(this.unite.length-4, this.unite.length-2)==true)
 		{
 			return 1;
 		}
-		if(w.connected(this.unite.length-3,this.unite.length-1))
+		if(w.connected(this.unite.length-3,this.unite.length-1)==true)
 		{
 			return 2;
 		}
