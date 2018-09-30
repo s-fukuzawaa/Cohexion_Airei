@@ -46,7 +46,7 @@ public class Board
 		this.b= new Board(original.getRows(),original.getColumns());
 		this.rows=original.getRows();
 		this.columns=original.getColumns();
-		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
+
 		this.unite= new int[this.columns*this.rows+4];
 		for(int i=0; i<this.columns*this.rows+4; i++)
 		{
