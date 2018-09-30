@@ -476,32 +476,11 @@ public class GameManager
 		System.out.println("Finished reading input file");
 
 		// HEY YOU!  Modify the parameters to change who plays the game
-		/*gm.play(
+		gm.play(
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
-				);*/
+				);
 		
-		In i = new In("testInput/board-5x5-2m.txt");
-
-		// Read in board size and create board
-		Board clone= new Board(board);
-
-		
-		GameManager g = new GameManager(clone);
-		
-		
-		// Read and apply any moves from the input file
-		//g.placeInitialPieces(in);
-		//i.close();
-
-		System.out.println("Finished reading input file");
-
-		// HEY YOU!  Modify the parameters to change who plays the game
-		/*g.play(
-				new PlayerInteractive(g),	// player 1
-				new PlayerInteractive(g)	// player 2
-				);*/
-		clone.getCurrentWinner();
 		
 				
 	}		
