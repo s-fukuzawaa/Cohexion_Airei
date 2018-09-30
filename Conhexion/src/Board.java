@@ -45,7 +45,7 @@ public class Board
 		//throw new UnsupportedOperationException();
 		this.b= original;
 		this.rows=b.getRows();
-		this.columns=b.Columns();
+		this.columns=b.getColumns();
 		this.board= new int[this.rows][this.columns];
 		for(int i=0; i<this.rows; i++)
 		{
