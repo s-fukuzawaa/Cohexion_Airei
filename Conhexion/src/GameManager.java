@@ -466,7 +466,7 @@ public class GameManager
 		Board board = new Board(rows, columns);
 
 		
-		GameManager gm = new GameManager(board);
+		/*GameManager gm = new GameManager(board);
 		
 		
 		// Read and apply any moves from the input file
@@ -479,7 +479,7 @@ public class GameManager
 		gm.play(
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
-				);
+				);*/
 		board.getPlayer(new Location(0,0));
 
 		//board.setPlayer(new Location(2,3), 1);
@@ -494,7 +494,7 @@ public class GameManager
 		
 		//board.getPlayer(new Location(6,8));
 		
-		System.out.print(board.isConnected(new Location(0, 2), new Location(1,1)));
+		board.isConnected(new Location(0, 2), new Location(1,1));
 
 				
 	}		
