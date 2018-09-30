@@ -46,19 +46,20 @@ public class Board
 		this.b= original;
 		this.rows=b.getRows();
 		this.columns=b.getColumns();
-		this.board= new int[this.rows][this.columns];
-		for(int i=0; i<this.rows; i++)
-		{
-			for(int j=0; j<this.columns; j++)
-			{
-				this.board[i][j]=b.getPlayer(new Location(i,j));
-			}
-		}
 		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
 		this.unite= new int[this.columns*this.rows+4];
 		for(int i=0; i<this.columns*this.rows+4; i++)
 		{
 			unite[i]=i;
+		}
+		this.board= new int[this.rows][this.columns];
+		for(int i=0; i<this.rows; i++)
+		{
+			for(int j=0; j<this.columns; j++)
+			{
+				setPlayer(new Location(i,j),b.getPlayer(new Location( i,j)));
+				this.board[i][j]=b.getPlayer(new Location(i,j));
+			}
 		}
 		
 	}
