@@ -102,12 +102,15 @@ public class Board
 		{
 			if(location.getRow()==0)
 			{
+				Location first= new Location(location.getRow()+1,location.getColumn() );
+				if(getPlayer(first)==player)
+				{w.union(loc, Convert(first));}
+				
 				if(location.getColumn()==0)
 				{
-					if(getPlayer(new Location(location.getRow()+1,location.getColumn() ))==player)
-					{w.union(loc, Convert(new Location(location.getRow()+1,location.getColumn() )));}
-					else if(getPlayer(new Location(location.getRow(),location.getColumn()+1 ))==player)
-					{w.union(loc, Convert(new Location(location.getRow(),location.getColumn()+1 )));}
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					 if(getPlayer(third)==player)
+					{w.union(loc, Convert(third));}
 					if(player==2)
 					{
 						w.union(loc,this.unite[unite.length-1]);
@@ -125,10 +128,8 @@ public class Board
 				{
 					Location forth= new Location(location.getRow(),location.getColumn()-1 );
 					Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
-					Location first= new Location(location.getRow()+1,location.getColumn() );
-					if(getPlayer(first)==player)
-					{w.union(loc, Convert(first));}
-					else if(getPlayer(forth)==player)
+					
+					if(getPlayer(forth)==player)
 					{w.union(loc, Convert(forth));}
 					else if(getPlayer(fifth)==player)
 					{w.union(loc, Convert(fifth));}
@@ -148,17 +149,11 @@ public class Board
 				{
 					Location forth= new Location(location.getRow(),location.getColumn()-1 );
 					Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
-					Location first= new Location(location.getRow()+1,location.getColumn() );
 					Location third= new Location(location.getRow(),location.getColumn()+1 );
 					
-					if(getPlayer(first)==player)
+					if(getPlayer(first)==player&&player==1)
 					{
-						if(player==1)
-						{
 							w.union( this.unite[unite.length-4],Convert(first));
-						}
-						w.union(loc, Convert(first));
-
 					}
 					 if(getPlayer(third)==player)
 					{
