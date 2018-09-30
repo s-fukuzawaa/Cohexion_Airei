@@ -56,6 +56,12 @@ public class Board
 			for(int j=0; j<this.columns; j++)
 			{
 				this.board[i][j]=original.getPlayer(new Location(i,j));
+			}
+		}
+		for(int i=0; i<this.rows;i++)
+		{
+			for(int j=0; j<this.columns;j++)
+			{
 				setPlayer(new Location(i,j),this.board[i][j]);
 			}
 		}

@@ -458,7 +458,7 @@ public class GameManager
 	public static void main(String[] args)
 	{
 		// HEY YOU!  Modify this string to read in other input files
-		In in = new In("testInput/board-5x5-22.txt");
+		In in = new In("testInput/board-5x5-8.txt");
 
 		// Read in board size and create board
 		int rows = in.readInt();
@@ -476,26 +476,33 @@ public class GameManager
 		System.out.println("Finished reading input file");
 
 		// HEY YOU!  Modify the parameters to change who plays the game
-		gm.play(
+		/*gm.play(
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
-				);
-		board.getPlayer(new Location(0,0));
-
-		//board.setPlayer(new Location(2,3), 1);
-		board.setPlayer(new Location(1,1), 1);
-		board.setPlayer(new Location(2,1),1);
-		board.setPlayer(new Location(3,1),1);
-		board.setPlayer(new Location(2, 0),1);
-		board.setPlayer(new Location(3, 3),1);
-		board.setPlayer(new Location(3,0),1);
-		board.setPlayer(new Location(0, 3),1);
-		board.setPlayer(new Location(0, 2),1);
+				);*/
 		
-		//board.getPlayer(new Location(6,8));
-		
-		board.isConnected(new Location(0, 2), new Location(1,1));
+		In i = new In("testInput/board-5x5-2m.txt");
 
+		// Read in board size and create board
+		Board clone= new Board(board);
+
+		
+		GameManager g = new GameManager(clone);
+		
+		
+		// Read and apply any moves from the input file
+		//g.placeInitialPieces(in);
+		//i.close();
+
+		System.out.println("Finished reading input file");
+
+		// HEY YOU!  Modify the parameters to change who plays the game
+		/*g.play(
+				new PlayerInteractive(g),	// player 1
+				new PlayerInteractive(g)	// player 2
+				);*/
+		clone.getCurrentWinner();
+		
 				
 	}		
 }
