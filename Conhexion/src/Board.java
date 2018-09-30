@@ -370,25 +370,25 @@ public class Board
 					{
 						w.union(loc, this.unite[unite.length-1]);
 					}
-					else 
-					{
-						
-						Location third= new Location(location.getRow(),location.getColumn()+1 );
-						Location forth= new Location(location.getRow(),location.getColumn()-1 );
-						Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
-						Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
-						
-						if(getPlayer(third)==player)
-						{w.union(Convert(third),loc);}
-						if(getPlayer(forth)==player)
-						{w.union(Convert(forth),loc);}
-						if(getPlayer(fifth)==player)
-						{w.union(Convert(fifth),loc);}
-						if(getPlayer(sixth)==player)
-						{w.union(Convert(sixth),loc);}
-					}
-			}
-				
+					
+				}
+				else 
+				{
+					
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					Location forth= new Location(location.getRow(),location.getColumn()-1 );
+					Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+					Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
+					
+					if(getPlayer(third)==player)
+					{w.union(Convert(third),loc);}
+					if(getPlayer(forth)==player)
+					{w.union(Convert(forth),loc);}
+					if(getPlayer(fifth)==player)
+					{w.union(Convert(fifth),loc);}
+					if(getPlayer(sixth)==player)
+					{w.union(Convert(sixth),loc);}
+				}
 			
 			
 			}}
