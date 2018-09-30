@@ -155,35 +155,39 @@ public class Board
 					
 					if(getPlayer(first)==player)
 					{
-						w.union(loc, Convert(first));
 						if(player==1)
 						{
 							w.union( this.unite[unite.length-4],Convert(first));
 						}
+						w.union(loc, Convert(first));
+
 					}
 					 if(getPlayer(third)==player)
 					{
-						w.union(loc, Convert(third));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-4],Convert(third));
 						}
+
+						w.union(loc, Convert(third));
 					}
 					if(getPlayer(forth)==player)
 					{
-						w.union(loc, Convert(forth));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-4],Convert(forth));
 						}
+
+						w.union(loc, Convert(forth));
 					}
 					if(getPlayer(fifth)==player)
 					{
-						w.union(loc, Convert(fifth));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-4],Convert(fifth));
 						}
+						w.union(loc, Convert(fifth));
+
 					}
 					else if(player==1)
 					{
@@ -246,35 +250,39 @@ public class Board
 					Location forth= new Location(location.getRow(),location.getColumn()-1 );
 					if(getPlayer(second)==player)
 					{
-						w.union(loc, Convert(second));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-2],Convert(second));
 						}
+
+						w.union(loc, Convert(second));
 					}
 					if(getPlayer(third)==player)
 					{
-						w.union(loc, Convert(third));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-2],Convert(third));
 						}
+
+						w.union(loc, Convert(third));
 					}
 					if(getPlayer(forth)==player)
 					{
-						w.union(loc, Convert(forth));
 						if(player==1)
 						{
 							w.union(this.unite[unite.length-2],Convert(forth));
 						}
+						w.union(loc, Convert(forth));
+
 					}
 					if(getPlayer(fifth)==player)
 					{
-						w.union(loc, Convert(fifth));
 						if(player==1)
 						{
 							w.union( this.unite[unite.length-2],Convert(fifth));
 						}
+						w.union(loc, Convert(fifth));
+
 					}
 					else if(player==1)
 					{
@@ -290,35 +298,37 @@ public class Board
 				Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
 				if(getPlayer(first)==player)
 				{
-					w.union(loc, Convert(first));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-3],Convert(first));
 					}
+					w.union(loc, Convert(first));
 				}
 				if(getPlayer(second)==player)
 				{
-					w.union(loc, Convert(second));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-3],Convert(second));
 					}
+					w.union(loc, Convert(second));
 				}
 				if(getPlayer(forth)==player)
 				{
-					w.union(loc, Convert(forth));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-3],Convert(forth));
 					}
+					w.union(loc, Convert(forth));
+
 				}
 				if(getPlayer(sixth)==player)
 				{
-					w.union(loc, Convert(sixth));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-3],Convert(sixth));
 					}
+					w.union(loc, Convert(sixth));
+
 				}
 				else if(player==2)
 				{
@@ -334,35 +344,39 @@ public class Board
 				Location third= new Location(location.getRow(),location.getColumn()+1 );
 				if(getPlayer(first)==player)
 				{
-					w.union(loc, Convert(first));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-1],Convert(first));
 					}
+
+					w.union(loc, Convert(first));
 				}
 				if(getPlayer(second)==player)
 				{
-					w.union(loc, Convert(second));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-1],Convert(second));
 					}
+					w.union(loc, Convert(second));
+
 				}
 				if(getPlayer(third)==player)
 				{
-					w.union(loc, Convert(third));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-1],Convert(third));
 					}
+					w.union(loc, Convert(third));
+
 				}
 				if(getPlayer(fifth)==player)
 				{
-					w.union(loc, Convert(fifth));
 					if(player==2)
 					{
 						w.union(this.unite[unite.length-1],Convert(fifth));
 					}
+					w.union(loc, Convert(fifth));
+
 				}
 				else if(player==2)
 				{
