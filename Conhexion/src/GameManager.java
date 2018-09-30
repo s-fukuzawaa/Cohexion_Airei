@@ -461,7 +461,7 @@ public class GameManager
 		In in = new In("testInput/board-5x5-8.txt");
 
 		// Read in board size and create board
-		int rows = in.readInt();
+		int rows = in.readInt();//
 		int columns = in.readInt();
 		Board board = new Board(rows, columns);
 
