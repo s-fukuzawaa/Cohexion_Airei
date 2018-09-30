@@ -145,7 +145,7 @@ public class Board
 						w.union( this.unite[unite.length-4],one);
 					}
 				}
-				else if(getPlayer(third)==player)
+				 if(getPlayer(third)==player)
 				{
 					int three=Convert(third);
 					w.union(loc, three);
@@ -154,7 +154,7 @@ public class Board
 						w.union(this.unite[unite.length-4],three);
 					}
 				}
-				else if(getPlayer(forth)==player)
+				if(getPlayer(forth)==player)
 				{
 					int four=Convert(forth);
 					w.union(loc, four);
@@ -163,7 +163,7 @@ public class Board
 						w.union(this.unite[unite.length-4],four);
 					}
 				}
-				else if(getPlayer(fifth)==player)
+				if(getPlayer(fifth)==player)
 				{
 					int five=Convert(fifth);
 					w.union(loc, five);
@@ -243,7 +243,7 @@ public class Board
 						w.union(this.unite[unite.length-2],two);
 					}
 				}
-				else if(getPlayer(third)==player)
+				if(getPlayer(third)==player)
 				{
 					int three=Convert(third);
 					w.union(loc, Convert(third));
@@ -252,7 +252,7 @@ public class Board
 						w.union(this.unite[unite.length-2],three);
 					}
 				}
-				else if(getPlayer(forth)==player)
+				if(getPlayer(forth)==player)
 				{
 					int four=Convert(forth);
 					w.union(loc, four);
@@ -261,7 +261,7 @@ public class Board
 						w.union(this.unite[unite.length-2],four);
 					}
 				}
-				else if(getPlayer(fifth)==player)
+				if(getPlayer(fifth)==player)
 				{
 					int five=Convert(fifth);
 					w.union(loc, five);
@@ -291,7 +291,7 @@ public class Board
 					w.union(this.unite[unite.length-3],one);
 				}
 			}
-			else if(getPlayer(second)==player)
+			if(getPlayer(second)==player)
 			{
 				int two=Convert(second);
 				w.union(loc, two);
@@ -300,7 +300,7 @@ public class Board
 					w.union(this.unite[unite.length-3],two);
 				}
 			}
-			else if(getPlayer(forth)==player)
+			if(getPlayer(forth)==player)
 			{
 				int four=Convert(forth);
 				w.union(loc, four);
@@ -309,7 +309,7 @@ public class Board
 					w.union(this.unite[unite.length-3],four);
 				}
 			}
-			else if(getPlayer(sixth)==player)
+			if(getPlayer(sixth)==player)
 			{
 				int six=Convert(sixth);
 				w.union(loc, six);
@@ -339,7 +339,7 @@ public class Board
 					w.union(this.unite[unite.length-1],one);
 				}
 			}
-			else if(getPlayer(second)==player)
+			if(getPlayer(second)==player)
 			{
 				int two=Convert(second);
 				w.union(loc, two);
@@ -348,7 +348,7 @@ public class Board
 					w.union(this.unite[unite.length-1],two);
 				}
 			}
-			else if(getPlayer(third)==player)
+			if(getPlayer(third)==player)
 			{
 				int three=Convert(third);
 				w.union(loc, three);
@@ -357,7 +357,7 @@ public class Board
 					w.union(this.unite[unite.length-1],three);
 				}
 			}
-			else if(getPlayer(fifth)==player)
+			if(getPlayer(fifth)==player)
 			{
 				int five=Convert(fifth);
 				w.union(loc, five);
