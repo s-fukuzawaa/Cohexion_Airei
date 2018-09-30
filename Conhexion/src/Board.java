@@ -104,12 +104,10 @@ public class Board
 			{
 				if(location.getColumn()==0)
 				{
-					Location third= new Location(location.getRow(),location.getColumn()+1 );
-					Location first= new Location(location.getRow()+1,location.getColumn() );
-					if(getPlayer(first)==player)
-					{w.union(loc, Convert(first));}
-					else if(getPlayer(third)==player)
-					{w.union(loc, Convert(third));}
+					if(getPlayer(new Location(location.getRow()+1,location.getColumn() ))==player)
+					{w.union(loc, Convert(new Location(location.getRow()+1,location.getColumn() )));}
+					else if(getPlayer(new Location(location.getRow(),location.getColumn()+1 ))==player)
+					{w.union(loc, Convert(new Location(location.getRow(),location.getColumn()+1 )));}
 					if(player==2)
 					{
 						w.union(loc,this.unite[unite.length-1]);
