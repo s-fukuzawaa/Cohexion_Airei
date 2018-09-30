@@ -98,313 +98,316 @@ public class Board
 
 		int loc=Convert(location);
 		
-		if(location.getRow()==0)
+		if(player!=0)
 		{
-			if(location.getColumn()==0)
+			if(location.getRow()==0)
 			{
-				Location third= new Location(location.getRow(),location.getColumn()+1 );
-				Location first= new Location(location.getRow()+1,location.getColumn() );
-				if(getPlayer(first)==player)
-				{w.union(loc, Convert(first));}
-				else if(getPlayer(third)==player)
-				{w.union(loc, Convert(third));}
-				if(player==2)
+				if(location.getColumn()==0)
 				{
-					w.union(loc,this.unite[unite.length-1]);
-
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					Location first= new Location(location.getRow()+1,location.getColumn() );
+					if(getPlayer(first)==player)
+					{w.union(loc, Convert(first));}
+					else if(getPlayer(third)==player)
+					{w.union(loc, Convert(third));}
+					if(player==2)
+					{
+						w.union(loc,this.unite[unite.length-1]);
+	
+					}
+					else if(player==1)
+					{
+						w.union(loc,this.unite[unite.length-4]);
+	
+					}
+				
 				}
-				else if(player==1)
+				
+				else if(location.getColumn()==getColumns()-1)
 				{
-					w.union(loc,this.unite[unite.length-4]);
-
+					Location forth= new Location(location.getRow(),location.getColumn()-1 );
+					Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
+					Location first= new Location(location.getRow()+1,location.getColumn() );
+					if(getPlayer(first)==player)
+					{w.union(loc, Convert(first));}
+					else if(getPlayer(forth)==player)
+					{w.union(loc, Convert(forth));}
+					else if(getPlayer(fifth)==player)
+					{w.union(loc, Convert(fifth));}
+					
+					if(player==1)
+					{
+						w.union(loc,this.unite[unite.length-4]);
+					}
+					else if(player==2)
+					{
+						w.union(loc, this.unite[unite.length-3]);
+					}
+	
 				}
-			
+				
+				else
+				{
+					Location forth= new Location(location.getRow(),location.getColumn()-1 );
+					Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
+					Location first= new Location(location.getRow()+1,location.getColumn() );
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					
+					if(getPlayer(first)==player)
+					{
+						int one=Convert(first);
+						w.union(loc, one);
+						if(player==1)
+						{
+							w.union( this.unite[unite.length-4],one);
+						}
+					}
+					 if(getPlayer(third)==player)
+					{
+						int three=Convert(third);
+						w.union(loc, three);
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-4],three);
+						}
+					}
+					if(getPlayer(forth)==player)
+					{
+						int four=Convert(forth);
+						w.union(loc, four);
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-4],four);
+						}
+					}
+					if(getPlayer(fifth)==player)
+					{
+						int five=Convert(fifth);
+						w.union(loc, five);
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-4],five);
+						}
+					}
+					else if(player==1)
+					{
+						w.union(loc, this.unite[unite.length-4]);
+					}
+					
+				}
 			}
-			
+			else if(location.getRow()==getRows()-1)
+			{
+				if(location.getColumn()==0)
+				{
+					Location second= new Location(location.getRow()-1,location.getColumn() );
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+					if(getPlayer(second)==player)
+					{w.union(loc, Convert(second));}
+					else if(getPlayer(third)==player)
+					{w.union(loc, Convert(third));}
+					else if(getPlayer(fifth)==player)
+					{w.union(loc, Convert(fifth));}
+					
+					if(player==2)
+					{
+						w.union(loc,this.unite[unite.length-1]);
+	
+					}
+					else if(player==1)
+					{
+						w.union(loc,this.unite[unite.length-2]);
+	
+					}
+				}
+				
+				else if(location.getColumn()==getColumns()-1)
+				{
+					Location second= new Location(location.getRow()-1,location.getColumn() );
+					Location forth= new Location(location.getRow(),location.getColumn()-1 );
+					 if(getPlayer(second)==player)
+					{w.union(loc, Convert(second));}
+					else if(getPlayer(forth)==player)
+					{w.union(loc, Convert(forth));}
+					 
+					 if(player==1)
+					 {
+							w.union(loc,this.unite[unite.length-2]);
+					 }
+					 else if(player==2)
+					 {
+							w.union(loc, this.unite[unite.length-3]);
+	
+					 }
+				}
+				
+				else 
+				{
+					Location second= new Location(location.getRow()-1,location.getColumn() );
+					Location third= new Location(location.getRow(),location.getColumn()+1 );
+					Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+					Location forth= new Location(location.getRow(),location.getColumn()-1 );
+					if(getPlayer(second)==player)
+					{
+						int two=Convert(second);
+						w.union(loc, two);
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-2],two);
+						}
+					}
+					if(getPlayer(third)==player)
+					{
+						int three=Convert(third);
+						w.union(loc, Convert(third));
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-2],three);
+						}
+					}
+					if(getPlayer(forth)==player)
+					{
+						int four=Convert(forth);
+						w.union(loc, four);
+						if(player==1)
+						{
+							w.union(this.unite[unite.length-2],four);
+						}
+					}
+					if(getPlayer(fifth)==player)
+					{
+						int five=Convert(fifth);
+						w.union(loc, five);
+						if(player==1)
+						{
+							w.union( this.unite[unite.length-2],five);
+						}
+					}
+					else if(player==1)
+					{
+						w.union(loc, this.unite[unite.length-2]);
+					}
+				}
+			}
 			else if(location.getColumn()==getColumns()-1)
 			{
-				Location forth= new Location(location.getRow(),location.getColumn()-1 );
-				Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
 				Location first= new Location(location.getRow()+1,location.getColumn() );
+				Location second= new Location(location.getRow()-1,location.getColumn() );
+				Location forth= new Location(location.getRow(),location.getColumn()-1 );
+				Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
 				if(getPlayer(first)==player)
-				{w.union(loc, Convert(first));}
-				else if(getPlayer(forth)==player)
-				{w.union(loc, Convert(forth));}
-				else if(getPlayer(fifth)==player)
-				{w.union(loc, Convert(fifth));}
-				
-				if(player==1)
 				{
-					w.union(loc,this.unite[unite.length-4]);
+					int one=Convert(first);
+					w.union(loc, one);
+					if(player==2)
+					{
+						w.union(this.unite[unite.length-3],one);
+					}
+				}
+				if(getPlayer(second)==player)
+				{
+					int two=Convert(second);
+					w.union(loc, two);
+					if(player==2)
+					{
+						w.union(this.unite[unite.length-3],two);
+					}
+				}
+				if(getPlayer(forth)==player)
+				{
+					int four=Convert(forth);
+					w.union(loc, four);
+					if(player==2)
+					{
+						w.union(this.unite[unite.length-3],four);
+					}
+				}
+				if(getPlayer(sixth)==player)
+				{
+					int six=Convert(sixth);
+					w.union(loc, six);
+					if(player==2)
+					{
+						w.union(this.unite[unite.length-3],six);
+					}
 				}
 				else if(player==2)
 				{
 					w.union(loc, this.unite[unite.length-3]);
 				}
-
-			}
-			
-			else
-			{
-				Location forth= new Location(location.getRow(),location.getColumn()-1 );
-				Location fifth= new Location(location.getRow()+1,location.getColumn()-1 );
-				Location first= new Location(location.getRow()+1,location.getColumn() );
-				Location third= new Location(location.getRow(),location.getColumn()+1 );
 				
+			}
+			else if(location.getColumn()==0)
+			{
+				Location first= new Location(location.getRow()+1,location.getColumn() );
+				Location second= new Location(location.getRow()-1,location.getColumn() );
+				Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+				Location third= new Location(location.getRow(),location.getColumn()+1 );
 				if(getPlayer(first)==player)
 				{
 					int one=Convert(first);
 					w.union(loc, one);
-					if(player==1)
+					if(player==2)
 					{
-						w.union( this.unite[unite.length-4],one);
+						w.union(this.unite[unite.length-1],one);
 					}
 				}
-				 if(getPlayer(third)==player)
-				{
-					int three=Convert(third);
-					w.union(loc, three);
-					if(player==1)
-					{
-						w.union(this.unite[unite.length-4],three);
-					}
-				}
-				if(getPlayer(forth)==player)
-				{
-					int four=Convert(forth);
-					w.union(loc, four);
-					if(player==1)
-					{
-						w.union(this.unite[unite.length-4],four);
-					}
-				}
-				if(getPlayer(fifth)==player)
-				{
-					int five=Convert(fifth);
-					w.union(loc, five);
-					if(player==1)
-					{
-						w.union(this.unite[unite.length-4],five);
-					}
-				}
-				else if(player==1)
-				{
-					w.union(loc, this.unite[unite.length-4]);
-				}
-				
-			}
-		}
-		else if(location.getRow()==getRows()-1)
-		{
-			if(location.getColumn()==0)
-			{
-				Location second= new Location(location.getRow()-1,location.getColumn() );
-				Location third= new Location(location.getRow(),location.getColumn()+1 );
-				Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
-				if(getPlayer(second)==player)
-				{w.union(loc, Convert(second));}
-				else if(getPlayer(third)==player)
-				{w.union(loc, Convert(third));}
-				else if(getPlayer(fifth)==player)
-				{w.union(loc, Convert(fifth));}
-				
-				if(player==2)
-				{
-					w.union(loc,this.unite[unite.length-1]);
-
-				}
-				else if(player==1)
-				{
-					w.union(loc,this.unite[unite.length-2]);
-
-				}
-			}
-			
-			else if(location.getColumn()==getColumns()-1)
-			{
-				Location second= new Location(location.getRow()-1,location.getColumn() );
-				Location forth= new Location(location.getRow(),location.getColumn()-1 );
-				 if(getPlayer(second)==player)
-				{w.union(loc, Convert(second));}
-				else if(getPlayer(forth)==player)
-				{w.union(loc, Convert(forth));}
-				 
-				 if(player==1)
-				 {
-						w.union(loc,this.unite[unite.length-2]);
-				 }
-				 else if(player==2)
-				 {
-						w.union(loc, this.unite[unite.length-3]);
-
-				 }
-			}
-			
-			else 
-			{
-				Location second= new Location(location.getRow()-1,location.getColumn() );
-				Location third= new Location(location.getRow(),location.getColumn()+1 );
-				Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
-				Location forth= new Location(location.getRow(),location.getColumn()-1 );
 				if(getPlayer(second)==player)
 				{
 					int two=Convert(second);
 					w.union(loc, two);
-					if(player==1)
+					if(player==2)
 					{
-						w.union(this.unite[unite.length-2],two);
+						w.union(this.unite[unite.length-1],two);
 					}
 				}
 				if(getPlayer(third)==player)
 				{
 					int three=Convert(third);
-					w.union(loc, Convert(third));
-					if(player==1)
+					w.union(loc, three);
+					if(player==2)
 					{
-						w.union(this.unite[unite.length-2],three);
-					}
-				}
-				if(getPlayer(forth)==player)
-				{
-					int four=Convert(forth);
-					w.union(loc, four);
-					if(player==1)
-					{
-						w.union(this.unite[unite.length-2],four);
+						w.union(this.unite[unite.length-1],three);
 					}
 				}
 				if(getPlayer(fifth)==player)
 				{
 					int five=Convert(fifth);
 					w.union(loc, five);
-					if(player==1)
+					if(player==2)
 					{
-						w.union( this.unite[unite.length-2],five);
+						w.union(this.unite[unite.length-1],five);
 					}
 				}
-				else if(player==1)
+				else if(player==2)
 				{
-					w.union(loc, this.unite[unite.length-2]);
+					w.union(loc, this.unite[unite.length-1]);
 				}
+				
 			}
-		}
-		else if(location.getColumn()==getColumns()-1)
-		{
-			Location first= new Location(location.getRow()+1,location.getColumn() );
-			Location second= new Location(location.getRow()-1,location.getColumn() );
-			Location forth= new Location(location.getRow(),location.getColumn()-1 );
-			Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
-			if(getPlayer(first)==player)
+			else 
 			{
-				int one=Convert(first);
-				w.union(loc, one);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-3],one);
-				}
+				Location first= new Location(location.getRow()+1,location.getColumn() );
+				Location second= new Location(location.getRow()-1,location.getColumn() );
+				Location third= new Location(location.getRow(),location.getColumn()+1 );
+				Location forth= new Location(location.getRow(),location.getColumn()-1 );
+				Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
+				Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
+				
+				if(getPlayer(first)==player)
+				{w.union(Convert(first),loc);}
+				if(getPlayer(second)==player)
+				{w.union( Convert(second),loc);}
+				if(getPlayer(third)==player)
+				{w.union(Convert(third),loc);}
+				if(getPlayer(forth)==player)
+				{w.union(Convert(forth),loc);}
+				if(getPlayer(fifth)==player)
+				{w.union(Convert(fifth),loc);}
+				if(getPlayer(sixth)==player)
+				{w.union(Convert(sixth),loc);}
 			}
-			if(getPlayer(second)==player)
-			{
-				int two=Convert(second);
-				w.union(loc, two);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-3],two);
-				}
-			}
-			if(getPlayer(forth)==player)
-			{
-				int four=Convert(forth);
-				w.union(loc, four);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-3],four);
-				}
-			}
-			if(getPlayer(sixth)==player)
-			{
-				int six=Convert(sixth);
-				w.union(loc, six);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-3],six);
-				}
-			}
-			else if(player==2)
-			{
-				w.union(loc, this.unite[unite.length-3]);
-			}
-			
-		}
-		else if(location.getColumn()==0)
-		{
-			Location first= new Location(location.getRow()+1,location.getColumn() );
-			Location second= new Location(location.getRow()-1,location.getColumn() );
-			Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
-			Location third= new Location(location.getRow(),location.getColumn()+1 );
-			if(getPlayer(first)==player)
-			{
-				int one=Convert(first);
-				w.union(loc, one);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-1],one);
-				}
-			}
-			if(getPlayer(second)==player)
-			{
-				int two=Convert(second);
-				w.union(loc, two);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-1],two);
-				}
-			}
-			if(getPlayer(third)==player)
-			{
-				int three=Convert(third);
-				w.union(loc, three);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-1],three);
-				}
-			}
-			if(getPlayer(fifth)==player)
-			{
-				int five=Convert(fifth);
-				w.union(loc, five);
-				if(player==2)
-				{
-					w.union(this.unite[unite.length-1],five);
-				}
-			}
-			else if(player==2)
-			{
-				w.union(loc, this.unite[unite.length-1]);
-			}
-			
-		}
-		else 
-		{
-			Location first= new Location(location.getRow()+1,location.getColumn() );
-			Location second= new Location(location.getRow()-1,location.getColumn() );
-			Location third= new Location(location.getRow(),location.getColumn()+1 );
-			Location forth= new Location(location.getRow(),location.getColumn()-1 );
-			Location fifth= new Location(location.getRow()-1,location.getColumn()+1 );
-			Location sixth= new Location(location.getRow()+1,location.getColumn() -1);
-			
-			if(getPlayer(first)==player)
-			{w.union(Convert(first),loc);}
-			if(getPlayer(second)==player)
-			{w.union( Convert(second),loc);}
-			if(getPlayer(third)==player)
-			{w.union(Convert(third),loc);}
-			if(getPlayer(forth)==player)
-			{w.union(Convert(forth),loc);}
-			if(getPlayer(fifth)==player)
-			{w.union(Convert(fifth),loc);}
-			if(getPlayer(sixth)==player)
-			{w.union(Convert(sixth),loc);}
 		}
 		
 	}
