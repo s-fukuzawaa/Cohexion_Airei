@@ -43,9 +43,9 @@ public class Board
 	public Board(Board original)
 	{
 		//throw new UnsupportedOperationException();
-		this.b= original;
-		this.rows=b.getRows();
-		this.columns=b.getColumns();
+		this.b= new Board(original.getRows(),original.getColumns());
+		this.rows=original.getRows();
+		this.columns=original.getColumns();
 		this.w= new WeightedQuickUnionUFCloneable(this.columns*this.rows+4);
 		this.unite= new int[this.columns*this.rows+4];
 		for(int i=0; i<this.columns*this.rows+4; i++)
@@ -57,8 +57,8 @@ public class Board
 		{
 			for(int j=0; j<this.columns; j++)
 			{
-				setPlayer(new Location(i,j),b.getPlayer(new Location( i,j)));
-				this.board[i][j]=b.getPlayer(new Location(i,j));
+				b.setPlayer(new Location(i,j),original.getPlayer(new Location( i,j)));
+				this.board[i][j]=original.getPlayer(new Location(i,j));
 			}
 		}
 		
