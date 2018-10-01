@@ -458,14 +458,16 @@ public class GameManager
 	public static void main(String[] args)
 	{
 		// HEY YOU!  Modify this string to read in other input files
-		In in = new In("testInput/board-11x11-empty.txt");
+		In in = new In("testInput/board-5x5-8.txt");
 
 		// Read in board size and create board
-		int rows = in.readInt();
+		int rows = in.readInt();//
 		int columns = in.readInt();
 		Board board = new Board(rows, columns);
 
+		
 		GameManager gm = new GameManager(board);
+		
 		
 		// Read and apply any moves from the input file
 		gm.placeInitialPieces(in);
@@ -478,5 +480,8 @@ public class GameManager
 				new PlayerInteractive(gm),	// player 1
 				new PlayerInteractive(gm)	// player 2
 				);
+		
+		
+				
 	}		
 }
