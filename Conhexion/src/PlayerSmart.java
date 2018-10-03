@@ -30,7 +30,7 @@ public class PlayerSmart implements Player
 					for(int n=0; n<2000; n++)//
 					{
 						
-						if(play(b)==player)
+						if(play(b)==1)
 						{
 							winum++;
 						}
