@@ -478,8 +478,8 @@ public class GameManager
 		// HEY YOU!  Modify the parameters to change who plays the game
 		
 		gm.play(
-				new PlayerInteractive(gm),	// player 1
-				new PlayerInteractive(gm)	// player 2
+				new PlayerSmart(),	// player 1
+				new PlayerRandom()	// player 2
 				);
 		
 		

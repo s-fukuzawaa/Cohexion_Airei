@@ -14,9 +14,7 @@ public class PlayerSmart implements Player
 	{
 		//throw new UnsupportedOperationException();
 		Board b= new Board(board);
-		Location finalloc=new Location(0,0);
-		Location loc;
-		int max=0;
+		Location loc=new Location(0,0);
 		int i=b.getColumns()*b.getColumns();
 		while (i>0)
 		{
@@ -38,17 +36,15 @@ public class PlayerSmart implements Player
 					}
 					n++;
 				}
-				if(count>max)
+				if(count>=500)
 				{	
-					max=count;
-					finalloc= new Location(loc.getRow(),loc.getColumn());
+					return loc;
 				}
 			}
 			i--;
 		}
-		return finalloc;
 
-
+		return loc;
 		
 		
 
