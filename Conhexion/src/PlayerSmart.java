@@ -28,7 +28,7 @@ public class PlayerSmart implements Player
 				loc= new Location(row, column);
 				b.setPlayer(loc, player);
 				int count=0;
-				int i=0;
+				int n=0;
 				while(i<=1000)
 				{
 					int x=play(b);
@@ -36,7 +36,7 @@ public class PlayerSmart implements Player
 					{
 						count++;
 					}
-					i++;
+					n++;
 				}
 				if(count>max)
 				{	
