@@ -14,37 +14,37 @@ public class PlayerSmart implements Player
 	{
 		//throw new UnsupportedOperationException();
 		Board b= new Board(board);
-		Location loc=new Location(0,0);
-		int i=b.getColumns()*b.getColumns();
-		while (i>0)
+		Location loc= new Location(0,0);
+		int winum=0;
+		int max=0;
+		for(int i=0; i<b.getRows(); i++)
 		{
-			int row = (int) (Math.random() * b.getRows());
-			int column = (int) (Math.random() * b.getColumns());
-			int existingPlayer = b.getPlayer(new Location(row, column));
-			if (existingPlayer == Board.PLAYER_NONE)
+			for(int j=0; j<b.getColumns(); j++)
 			{
-				loc= new Location(row, column);
-				b.setPlayer(loc, player);
-				int count=0;
-				int n=0;
-				while(i<=1000)
+				if(b.getPlayer(new Location(i,j))==0)
 				{
-					int x=play(b);
-					if(x==player)
+					for(int n=0; n<1000; n++)
 					{
-						count++;
+						int x=play(b);
+						if(x==player)
+						{
+							winum++;
+						}
 					}
-					n++;
-				}
-				if(count>=500)
-				{	
-					return loc;
+					if(winum>max)
+					{
+						max=winum;
+						loc= new Location(i,j);
+					}
+					
 				}
 			}
-			i--;
 		}
-
 		return loc;
+		
+		
+
+
 		
 		
 
