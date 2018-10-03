@@ -1,12 +1,7 @@
 public class PlayerSmart implements Player
 {
 	// Constructs a new instance of the PlayerSmart class
-	private int curPlayer;
-	public PlayerSmart()
-	{
-		//throw new UnsupportedOperationException()
-		this.curPlayer = Board.PLAYER_1;
-	}
+	
 
 	// Returns the Location where this Player chooses to move
 	@Override
@@ -29,8 +24,26 @@ public class PlayerSmart implements Player
 					b.setPlayer(new Location(i,j), player);
 					for(int n=0; n<1000; n++)//
 					{
-						
-						if(play(b)==player)
+						Player[] players = new Player[] { new PlayerRandom(), new PlayerRandom() };
+
+						int curPlayer=0;
+							while (b.getCurrentWinner() == b.PLAYER_NONE) 
+							{
+								
+								Player play = players[curPlayer - 1];
+								
+								// Ask player for its move
+								
+								
+								// Apply the move to the Board
+								b.setPlayer(play.getNextMove(b, curPlayer), curPlayer);
+
+								
+								// Toggle to the next player
+								curPlayer = 3 - curPlayer;
+								
+							}
+						if(b.getCurrentWinner()==player)
 						{
 							winum++;
 						}
@@ -55,25 +68,5 @@ public class PlayerSmart implements Player
 	}
 
 
-		public int play(Board board)
-		{
-			Player[] players = new Player[] { new PlayerRandom(), new PlayerRandom() };
-
-			while (board.getCurrentWinner() == 0) 
-			{
-				Player play = players[curPlayer - 1];
-				
-				// Ask player for its move
-				
-				
-				// Apply the move to the Board
-				board.setPlayer(play.getNextMove(board, curPlayer), curPlayer);
-
-				
-				// Toggle to the next player
-				curPlayer = 3 - curPlayer;
-				
-			}
-			return board.getCurrentWinner();
-		}
+		
 }
