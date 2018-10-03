@@ -14,10 +14,11 @@ public class PlayerSmart implements Player
 	{
 		//throw new UnsupportedOperationException();
 		Board b= new Board(board);
+		Location finalloc=new Location(0,0);
 		Location loc;
-		Location finalloc;
 		int max=0;
-		while (true)
+		int i=b.getColumns()*b.getColumns();
+		while (i>0)
 		{
 			int row = (int) (Math.random() * b.getRows());
 			int column = (int) (Math.random() * b.getColumns());
@@ -42,10 +43,11 @@ public class PlayerSmart implements Player
 					max=count;
 					finalloc= new Location(loc.getRow(),loc.getColumn());
 				}
-				return finalloc;
 			}
+			i--;
 		}
-		
+		return finalloc;
+
 
 		
 		
