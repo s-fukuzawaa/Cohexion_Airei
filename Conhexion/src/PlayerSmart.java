@@ -27,7 +27,7 @@ public class PlayerSmart implements Player
 					Board b= new Board(board);
 
 					b.setPlayer(new Location(i,j), player);
-					for(int n=0; n<5000; n++)//
+					for(int n=0; n<2000; n++)//
 					{
 						
 						if(play(b)==player)
