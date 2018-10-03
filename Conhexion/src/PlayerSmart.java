@@ -23,6 +23,7 @@ public class PlayerSmart implements Player
 			{
 				if(b.getPlayer(new Location(i,j))==0)
 				{
+					b.setPlayer(new Location(i,j), player);
 					for(int n=0; n<1000; n++)
 					{
 						int x=play(b);
