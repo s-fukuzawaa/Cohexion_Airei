@@ -408,7 +408,7 @@ public class GameManager
 	{
 		// Set this to true, and the game will be recorded into a test file with the
 		// name "board-recorded.txt" located in the project directory in your workspace
-		final boolean record = true;
+		final boolean record = false;
 
 		Out out = null;
 		if (record)
@@ -476,14 +476,12 @@ public class GameManager
 		System.out.println("Finished reading input file");
 
 		// HEY YOU!  Modify the parameters to change who plays the game
-		int count=0;
-		while(count<=1000)
-		{	
+		
 		gm.play(
-				new PlayerRandom(),	// player 1
-				new PlayerRandom()	// player 2
+				new PlayerInteractive(gm),	// player 1
+				new PlayerInteractive(gm)	// player 2
 				);
-		}
+		
 		
 				
 	}		
