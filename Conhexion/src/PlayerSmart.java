@@ -13,21 +13,21 @@ public class PlayerSmart implements Player
 	public Location getNextMove(Board board, int player)
 	{
 		//throw new UnsupportedOperationException();
-		Board b= new Board(board);
 		int winum=0;
 		int max=0;
 		Location loc= new Location(0,0);
 
-		for(int i=0; i<b.getRows(); i++)
+		for(int i=0; i<board.getRows(); i++)
 		{
-			for(int j=0; j<b.getColumns(); j++)
+			for(int j=0; j<board.getColumns(); j++)
 			{
+				Board b= new Board(board);
 				winum=0;
 				if(b.getPlayer(new Location(i,j))==Board.PLAYER_NONE)
 				{
 
 					b.setPlayer(new Location(i,j), player);
-					for(int n=0; n<5000; n++)//
+					for(int n=0; n<1000; n++)//
 					{
 						
 						if(play(b)==player)
