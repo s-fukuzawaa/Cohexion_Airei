@@ -56,24 +56,15 @@ public class PlayerSmart implements Player
 		{
 			Player[] players = new Player[] { new PlayerRandom(), new PlayerRandom() };
 
-			while (board.getCurrentWinner() == Board.PLAYER_NONE) 
+			while (board.getCurrentWinner() == 0) 
 			{
 				Player play = players[curPlayer - 1];
 				
 				// Ask player for its move
-				Location nextMove = play.getNextMove(new Board(board), curPlayer);
 				
-				// Is the move legal?
-				int currentOccupant = board.getPlayer(nextMove);
-				if (currentOccupant != Board.PLAYER_NONE)
-				{
-					throw new UnsupportedOperationException("Player # " + curPlayer + " attempted an illegal move in row " +
-							nextMove.getRow() + ", column " + nextMove.getColumn() + 
-							", which is already occupied by player " + currentOccupant);
-				}
-
+				
 				// Apply the move to the Board
-				board.setPlayer(nextMove, curPlayer);
+				board.setPlayer(play.getNextMove(board, curPlayer), curPlayer);
 
 				
 				// Toggle to the next player
