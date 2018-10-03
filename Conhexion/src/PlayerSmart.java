@@ -21,13 +21,13 @@ public class PlayerSmart implements Player
 		{
 			for(int j=0; j<board.getColumns(); j++)
 			{
-				Board b= new Board(board);
 				winum=0;
-				if(b.getPlayer(new Location(i,j))==Board.PLAYER_NONE)
+				if(board.getPlayer(new Location(i,j))==Board.PLAYER_NONE)
 				{
+					Board b= new Board(board);
 
 					b.setPlayer(new Location(i,j), player);
-					for(int n=0; n<5000; n++)//
+					for(int n=0; n<1000; n++)//
 					{
 						
 						if(play(b)==player)
