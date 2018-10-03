@@ -74,7 +74,6 @@ public class PlayerSmart implements Player
 				curPlayer = 3 - curPlayer;
 				
 			}
-			System.out.print(board.getCurrentWinner());
 			return board.getCurrentWinner();
 		}
 }
