@@ -26,8 +26,8 @@ public class PlayerSmart implements Player
 				{
 					Board b= new Board(board);
 
-					b.setPlayer(new Location(i,j), player);
-					for(int n=0; n<2000; n++)//
+					b.setPlayer(new Location(i,j), 1);
+					for(int n=0; n<5; n++)//
 					{
 						
 						if(play(b)==1)
@@ -74,6 +74,7 @@ public class PlayerSmart implements Player
 				curPlayer = 3 - curPlayer;
 				
 			}
+			System.out.print(board.getCurrentWinner());
 			return board.getCurrentWinner();
 		}
 }
