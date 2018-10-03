@@ -26,11 +26,11 @@ public class PlayerSmart implements Player
 				{
 					Board b= new Board(board);
 
-					b.setPlayer(new Location(i,j), 1);
+					b.setPlayer(new Location(i,j), player);
 					for(int n=0; n<5; n++)//
 					{
 						
-						if(play(b)==1)
+						if(play(b)==player)
 						{
 							winum++;
 						}
