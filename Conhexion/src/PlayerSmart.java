@@ -35,7 +35,7 @@ public class PlayerSmart implements Player
 							winum++;
 						}
 					}//
-					if(winum>max)
+					if(winum>=max)
 					{
 						max=winum;
 						loc= new Location(i,j);
