@@ -26,8 +26,8 @@ public class PlayerSmart implements Player
 					b.setPlayer(new Location(i,j), player);
 					for(int n=0; n<1000; n++)
 					{
-						int x=play(b);
-						if(x==player)
+						
+						if(play(b)==player)
 						{
 							winum++;
 						}
