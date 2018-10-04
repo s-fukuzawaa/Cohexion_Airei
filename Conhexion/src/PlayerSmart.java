@@ -19,11 +19,12 @@ public class PlayerSmart implements Player
 				winum=0;
 				if(board.getPlayer(new Location(i,j))==Board.PLAYER_NONE)
 				{
-					Board b= new Board(board);
-
-					b.setPlayer(new Location(i,j), player);
+					
 					for(int n=0; n<5000; n++)//
 					{
+						Board b= new Board(board);
+
+						b.setPlayer(new Location(i,j), player);
 						Player[] players = new Player[] { new PlayerRandom(), new PlayerRandom() };
 
 						int curPlayer=3-player;
