@@ -26,7 +26,7 @@ public class PlayerSmart implements Player
 					{
 						Player[] players = new Player[] { new PlayerRandom(), new PlayerRandom() };
 
-						int curPlayer=0;
+						int curPlayer=1;
 							while (b.getCurrentWinner() == b.PLAYER_NONE) 
 							{
 								
